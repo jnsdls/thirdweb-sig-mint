@@ -1,3 +1,5 @@
+import { NATIVE_TOKEN_ADDRESS } from "@thirdweb-dev/sdk";
+
 export const nft = {
   name: "Test",
   description: "Test",
@@ -6,13 +8,13 @@ export const nft = {
   id: "0",
   tokens: [
     {
-      name: "Matic",
-      address: "0x0000000000000000000000000000000000000000",
+      name: "MATIC",
+      address: NATIVE_TOKEN_ADDRESS,
       price: 5,
     },
     {
       name: "USDC",
-      address: "0xe11A86849d99F524cAC3E7A0Ec1241828e332C62",
+      address: "0xe6b8a5cf854791412c1f6efc7caf629f5df1c747",
       price: 5,
     },
   ],

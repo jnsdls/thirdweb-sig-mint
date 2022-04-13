@@ -10,15 +10,13 @@ const Home: NextPage = () => {
   const editionContract = useEdition(
     "0x09fd447A2E065c9CA83934088D64372dDE15EE87"
   );
-  const [token, setToken] = useState(
-    "0x0000000000000000000000000000000000000000"
-  );
+  const [tokenName, setTokenName] = useState("MATIC");
 
   const mintWithSignature = async (tokenId: string) => {
     const signedPayloadReq = await fetch(`/api/generate-mint-sig`, {
       method: "POST",
       body: JSON.stringify({
-        token,
+        tokenName,
         tokenId,
         address,
       }),
@@ -42,9 +40,9 @@ const Home: NextPage = () => {
             <div>
               <p>Name: {nft.name}</p>
               <p>Description: {nft.description}</p>
-              <select onChange={(e) => setToken(e.target.value)}>
+              <select onChange={(e) => setTokenName(e.target.value)}>
                 {nft.tokens.map((token) => (
-                  <option key={token.address} value={token.address}>
+                  <option key={token.name} value={token.name}>
                     {token.name}
                   </option>
                 ))}

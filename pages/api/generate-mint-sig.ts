@@ -7,7 +7,7 @@ const generateMintSignature = async (
   req: NextApiRequest,
   res: NextApiResponse
 ) => {
-  const { tokenId, address, token } = JSON.parse(req.body);
+  const { tokenId, address, tokenName } = JSON.parse(req.body);
 
   const sdk = new ThirdwebSDK(
     new ethers.Wallet(
@@ -22,13 +22,15 @@ const generateMintSignature = async (
     "0x09fd447A2E065c9CA83934088D64372dDE15EE87"
   );
 
+  const token = nft.tokens.find((t) => t.name === tokenName);
+
   const signedPayload = await editionContract.signature.generate({
     tokenId: tokenId,
     quantity: "1",
     metadata: "",
     to: address,
-    currencyAddress: token,
-    price: nft.tokens.find((t) => t.address === token)?.price,
+    currencyAddress: token?.address,
+    price: token?.price,
   });
 
   res.status(200).json({
