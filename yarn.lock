@@ -674,7 +674,7 @@
   resolved "https://registry.yarnpkg.com/@thirdweb-dev/contracts/-/contracts-2.1.7.tgz#433afa8541e0d696a93bc8654e67eccd6c9f88d3"
   integrity sha512-QR4LtpopyCSdIhH4rdmXCrbeli0VaZ/hvkysetZqLRBAsuDjchqIS17vkAWwKQ903sK73RnZuEVQ4HAFkxzfqg==
 
-"@thirdweb-dev/react@^2":
+"@thirdweb-dev/react@^2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@thirdweb-dev/react/-/react-2.0.4.tgz#9041717cd348e567fa83ef3fb3720a43034e0bb0"
   integrity sha512-cDgum5HdJZJVvctGhuqOz1b+m2iCOVL8yMYsj8vFH89j/onSqMYsWTc1D96Gv3ErSw7hrFxasJbNklxfDciu4g==
@@ -685,10 +685,10 @@
     tiny-invariant "^1.2.0"
     wagmi "0.2.24"
 
-"@thirdweb-dev/sdk@^2":
-  version "2.0.30"
-  resolved "https://registry.yarnpkg.com/@thirdweb-dev/sdk/-/sdk-2.0.30.tgz#1cd9f129a3fa398093af5d4b9009af5498052cc8"
-  integrity sha512-WLrQUTvaJLWiJ4imLEhs8XwNmtTOwLwZJQ6B6QaKbd+7fTu+521A6GjdHYRtsimL4R4wAjwLLuWxeBIyLYeNDg==
+"@thirdweb-dev/sdk@2.0.29":
+  version "2.0.29"
+  resolved "https://registry.yarnpkg.com/@thirdweb-dev/sdk/-/sdk-2.0.29.tgz#b7f8fa2ac81ee6fc48b8b182cf96db662f340b37"
+  integrity sha512-qDwNpzmGppGb07TdPrhtxh08oO5wBjbUYS5+EavxEceoENzwGYR1ZLsGPuhR3eM1kiBEdO4ZxQSOVuISGtqH8Q==
   dependencies:
     "@ethersproject/bignumber" "^5.6.0"
     "@ethersproject/bytes" "^5.6.1"

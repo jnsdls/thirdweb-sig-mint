@@ -1,6 +1,7 @@
 import { useAddress, useEdition, useMetamask } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useState } from "react";
 import { nft } from "../nft";
 
 const Home: NextPage = () => {
@@ -9,11 +10,15 @@ const Home: NextPage = () => {
   const editionContract = useEdition(
     "0x09fd447A2E065c9CA83934088D64372dDE15EE87"
   );
+  const [token, setToken] = useState(
+    "0x0000000000000000000000000000000000000000"
+  );
 
   const mintWithSignature = async (tokenId: string) => {
     const signedPayloadReq = await fetch(`/api/generate-mint-sig`, {
       method: "POST",
       body: JSON.stringify({
+        token,
         tokenId,
         address,
       }),
@@ -37,6 +42,13 @@ const Home: NextPage = () => {
             <div>
               <p>Name: {nft.name}</p>
               <p>Description: {nft.description}</p>
+              <select onChange={(e) => setToken(e.target.value)}>
+                {nft.tokens.map((token) => (
+                  <option key={token.address} value={token.address}>
+                    {token.name}
+                  </option>
+                ))}
+              </select>
               <button
                 onClick={() => {
                   mintWithSignature(nft.id);
